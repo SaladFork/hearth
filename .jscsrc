@@ -1,5 +1,5 @@
 {
-  "additionalRules": ["node_modules/ember-suave/lib/rules/*.js"],
+  "additionalRules": ["node_modules/ember-suave/lib/rules/*.js", "lib/rules/*.js"],
   "esnext": true,
   "verbose": true,
 
