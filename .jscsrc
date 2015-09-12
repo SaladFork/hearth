@@ -1,0 +1,4 @@
+{
+  "additionalRules": ["node_modules/ember-suave/lib/rules/*.js"],
+  "preset": "./node_modules/ember-suave/lib/jscsrc.json"
+}
