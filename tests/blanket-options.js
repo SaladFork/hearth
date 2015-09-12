@@ -4,7 +4,9 @@ var options = {
   modulePrefix: 'hearth',
   filter: '//.*hearth/.*/',
   antifilter: '//.*(tests|template).*/',
-  loaderExclusions: [],
+  loaderExclusions: [
+    'initializers/container-debug-adapter'
+  ],
   enableCoverage: true,
   cliOptions: {
     reporters: ['json'],
