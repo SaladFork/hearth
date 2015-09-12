@@ -1,4 +1,6 @@
 /* jshint node: true */
+/* jscs:disable disallowVar, requireEnhancedObjectLiterals */
+/* jscs:disable disallowEmptyBlocks */
 
 module.exports = function(environment) {
   var ENV = {
