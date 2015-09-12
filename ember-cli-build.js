@@ -1,9 +1,15 @@
 /* global require, module */
+
+/* jscs:disable disallowVar, requireEnhancedObjectLiterals */
+/* jscs:disable requireTemplateStringsForConcatenation */
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     // Add options here
+    jscsOptions: {
+      testGenerator: testGenerator
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated
@@ -21,3 +27,21 @@ module.exports = function(defaults) {
 
   return app.toTree();
 };
+
+function testGenerator(relativePath, errors) {
+  if (errors) {
+    errors = '\\n' + this.escapeErrorString(errors);
+  } else {
+    errors = '';
+  }
+
+  var expectString = relativePath + ' should pass JSCS' + errors;
+
+  return [
+    'describe("JSCS - ' + relativePath + '", function () {',
+      'it("should pass jscs", function () {',
+        'expect(' + !errors + ', "' + expectString + '").to.be.ok;',
+      '});',
+    '});'
+  ].join('\n');
+}
