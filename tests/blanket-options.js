@@ -5,7 +5,12 @@ var options = {
   filter: '//.*hearth/.*/',
   antifilter: '//.*(tests|template).*/',
   loaderExclusions: [
-    'initializers/container-debug-adapter'
+    'initializers/container-debug-adapter',
+    'initializers/export-application-global',
+    'components/app-version',
+    'config/environment',
+    'controllers/array',
+    'controllers/object'
   ],
   enableCoverage: true,
   cliOptions: {
